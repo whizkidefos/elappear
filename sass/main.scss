@@ -1,0 +1,66 @@
+@import './materialize';
+
+//VARIABLES
+$header-font: 'Playfair Display', serif;
+$body-font: 'Fauna One', serif;
+
+$header-bg: url(../images/pattern.png);
+$header-height: 300px;
+
+//-----MIXINS--------
+@function set-text-color($color) {
+    @if(lightness($color) > 50) {
+        @return #000000;
+    } @else {
+        @return #ffffff;
+    }
+}
+
+body {
+    font-family: $body-font;
+    background-color: $primary-color;
+    color: set-text-color($primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+}
+
+.main-header{
+    background: $header-bg;
+    color: #fff;
+    height: $header-height;
+    margin-bottom: 40px;
+    
+    h1 {
+        margin: 0;
+        padding-top: 50px;
+    }
+}
+
+.img-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+}
+.card-content {
+    color: $primary-color;
+}
+
+.page-footer {
+    background: $secondary-color;
+    
+    .footer-copyright {
+        background: $secondary-color-darken;
+    }
+}
+
+.modal {
+    color: #333;
+    overflow: auto;
+}
+
+.row-1, .row-2, .row-3 {
+    opacity: 0;
+}
